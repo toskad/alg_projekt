@@ -1,0 +1,92 @@
+\doxysection{caves.\+cpp File Reference}
+\hypertarget{caves_8cpp}{}\label{caves_8cpp}\index{caves.cpp@{caves.cpp}}
+
+
+Program pro hledání všech možných cest v systému jeskyní.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{caves_8cpp_a9d1985e836101c73f927acdc5649ace1}{is\+Small\+Cave}} (const string \&cave)
+\begin{DoxyCompactList}\small\item\em Zjišťuje, zda je jeskyně malá (název obsahuje pouze malá písmena). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{caves_8cpp_abd2758fda92ef5d088f70f80411cd5f8}{find\+Paths}} (const string \&current, map$<$ string, vector$<$ string $>$ $>$ \&graph, set$<$ string $>$ \&visited, vector$<$ string $>$ \&current\+Path, vector$<$ vector$<$ string $>$ $>$ \&all\+Paths)
+\begin{DoxyCompactList}\small\item\em Hledá všechny cesty z aktuální jeskyně do cílové jeskyně "{}end"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{caves_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Hlavní funkce programu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Program pro hledání všech možných cest v systému jeskyní. 
+
+Tento program čte graf jeskyní ze vstupního souboru a hledá všechny cesty z "{}start"{} do "{}end"{} za použití rekurze a správy navštívených uzlů. \begin{DoxyAuthor}{Author}
+Adam Toška 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+8.\+12.\+2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{caves_8cpp_abd2758fda92ef5d088f70f80411cd5f8}\index{caves.cpp@{caves.cpp}!findPaths@{findPaths}}
+\index{findPaths@{findPaths}!caves.cpp@{caves.cpp}}
+\doxysubsubsection{\texorpdfstring{findPaths()}{findPaths()}}
+{\footnotesize\ttfamily \label{caves_8cpp_abd2758fda92ef5d088f70f80411cd5f8} 
+void find\+Paths (\begin{DoxyParamCaption}\item[{const string \&}]{current}{, }\item[{map$<$ string, vector$<$ string $>$ $>$ \&}]{graph}{, }\item[{set$<$ string $>$ \&}]{visited}{, }\item[{vector$<$ string $>$ \&}]{current\+Path}{, }\item[{vector$<$ vector$<$ string $>$ $>$ \&}]{all\+Paths}{}\end{DoxyParamCaption})}
+
+
+
+Hledá všechny cesty z aktuální jeskyně do cílové jeskyně "{}end"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & Aktuální jeskyně. \\
+\hline
+{\em graph} & Graf reprezentující spojení mezi jeskyněmi. \\
+\hline
+{\em visited} & Množina navštívených malých jeskyní. \\
+\hline
+{\em current\+Path} & Aktuální cesta. \\
+\hline
+{\em all\+Paths} & Vektor všech nalezených cest. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{caves_8cpp_a9d1985e836101c73f927acdc5649ace1}\index{caves.cpp@{caves.cpp}!isSmallCave@{isSmallCave}}
+\index{isSmallCave@{isSmallCave}!caves.cpp@{caves.cpp}}
+\doxysubsubsection{\texorpdfstring{isSmallCave()}{isSmallCave()}}
+{\footnotesize\ttfamily \label{caves_8cpp_a9d1985e836101c73f927acdc5649ace1} 
+bool is\+Small\+Cave (\begin{DoxyParamCaption}\item[{const string \&}]{cave}{}\end{DoxyParamCaption})}
+
+
+
+Zjišťuje, zda je jeskyně malá (název obsahuje pouze malá písmena). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cave} & Název jeskyně. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true}, pokud je jeskyně malá; jinak {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{caves_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{caves.cpp@{caves.cpp}!main@{main}}
+\index{main@{main}!caves.cpp@{caves.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{caves_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Hlavní funkce programu. 
+
+Čte graf jeskyní ze souboru, hledá všechny cesty a vypisuje výsledky. \begin{DoxyReturn}{Returns}
+Návratový kód programu (0 = úspěch, 1 = chyba). 
+\end{DoxyReturn}
